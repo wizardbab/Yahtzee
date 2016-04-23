@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{E9797502-F296-4B6C-B626-0E6B40FB7C07}</ProjectGuid>
+    <ProjectGuid>{D5C4929A-B8F9-497F-A4EB-7D46506D605C}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Yahtzee</RootNamespace>

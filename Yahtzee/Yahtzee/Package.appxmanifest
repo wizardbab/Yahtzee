@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="6df9b101-d037-46d2-9072-97f90b18dc77"
-    Publisher="CN=120143"
+    Name="a2a3e4fa-95c7-411d-af12-44d661d12d81"
+    Publisher="CN=En Yang"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="6df9b101-d037-46d2-9072-97f90b18dc77" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="a2a3e4fa-95c7-411d-af12-44d661d12d81" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Yahtzee</DisplayName>
-    <PublisherDisplayName>120143</PublisherDisplayName>
+    <PublisherDisplayName>En Yang</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
