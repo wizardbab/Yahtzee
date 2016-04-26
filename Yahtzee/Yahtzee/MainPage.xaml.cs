@@ -34,7 +34,7 @@ namespace Yahtzee
             holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled =
             holdDice4.IsEnabled = holdDice5.IsEnabled = rollDiceBtn.IsEnabled = false;
 
-            if (numbersTotalTextBox.Text != string.Empty)
+            if (grandTotalTextBox.Text != string.Empty)
             {
                 startGameBtn.IsEnabled = true;
                 startGameBtn.Opacity = 1;
@@ -494,6 +494,12 @@ namespace Yahtzee
         {
             ((Button)sender).Content = scoreboard.calculateDigits(int.Parse(((Button)sender).Tag.ToString()), dices);
             ((Button)sender).IsEnabled = false;
+            scoreboard.DigitsCount++;
+            digitScore += scoreboard.calculateDigits(int.Parse(((Button)sender).Tag.ToString()), dices);
+            totalScore += scoreboard.calculateDigits(int.Parse(((Button)sender).Tag.ToString()), dices);
+            scoreboard.TotalCount++;
+            checkDigitScore();
+            checkTotalScore();
             resetTurn();
         }
 
@@ -501,6 +507,9 @@ namespace Yahtzee
         {
             ((Button)sender).Content = scoreboard.calculateThreeOfAKind(dices);
             ((Button)sender).IsEnabled = false;
+            totalScore += scoreboard.calculateThreeOfAKind(dices);
+            scoreboard.TotalCount++;
+            checkTotalScore();
             resetTurn();
         }
 
@@ -508,6 +517,9 @@ namespace Yahtzee
         {
             ((Button)sender).Content = scoreboard.calculateFourOfAKind(dices);
             ((Button)sender).IsEnabled = false;
+            totalScore += scoreboard.calculateFourOfAKind(dices);
+            scoreboard.TotalCount++;
+            checkTotalScore();
             resetTurn();
         }
 
@@ -515,6 +527,9 @@ namespace Yahtzee
         {
             ((Button)sender).Content = scoreboard.calculateFullHouse(dices);
             ((Button)sender).IsEnabled = false;
+            totalScore += scoreboard.calculateFullHouse(dices);
+            scoreboard.TotalCount++;
+            checkTotalScore();
             resetTurn();
         }
 
@@ -522,6 +537,9 @@ namespace Yahtzee
         {
             ((Button)sender).Content = scoreboard.calculateSmallStraight(dices);
             ((Button)sender).IsEnabled = false;
+            totalScore += scoreboard.calculateSmallStraight(dices);
+            scoreboard.TotalCount++;
+            checkTotalScore();
             resetTurn();
         }
 
@@ -529,12 +547,19 @@ namespace Yahtzee
         {
             ((Button)sender).Content = scoreboard.calculateLargeStraight(dices);
             ((Button)sender).IsEnabled = false;
+            totalScore += scoreboard.calculateLargeStraight(dices);
+            scoreboard.TotalCount++;
+            checkTotalScore();
+            resetTurn();
         }
 
         private void chanceButton_Clicked(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Content = scoreboard.calculateChance(dices);
             ((Button)sender).IsEnabled = false;
+            totalScore += scoreboard.calculateChance(dices);
+            scoreboard.TotalCount++;
+            checkTotalScore();
             resetTurn();
         }
 
@@ -542,15 +567,38 @@ namespace Yahtzee
         {
             ((Button)sender).Content = scoreboard.calculateYahtzee(dices);
             ((Button)sender).IsEnabled = false;
+            totalScore += scoreboard.calculateYahtzee(dices);
+            scoreboard.TotalCount++;
+            checkTotalScore();
             resetTurn();
         }
 
-        private void numbersBonusTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void checkDigitScore()
         {
-            if(digitScore >= 63)
+            if(scoreboard.DigitsCount == 6)
             {
-                totalScore += 35;
-                numbersBonusTextBox.Text = "35";
+                numbersTotalTextBox.Text = digitScore.ToString();
+                if(digitScore >= 63)
+                {
+                    totalScore += 35;
+                    numbersBonusTextBox.Text = "35";
+                }
+                else
+                {
+                    numbersBonusTextBox.Text = "0";
+                }
+            }
+        }
+
+        private void checkTotalScore()
+        {
+            if(scoreboard.TotalCount == 13)
+            {
+                grandTotalTextBox.Text = totalScore.ToString();
+
+                startGameBtn.IsEnabled = true;
+                startGameBtn.Opacity = 1;
+                startGameBtn.Content = "Restart";
             }
         }
         #endregion
@@ -558,13 +606,14 @@ namespace Yahtzee
         // Program Functions
         public void initialDice() // Create an object of dice
         {
-            int diceIndex;                       /* Index of every dice in the list           */
+            int diceIndex; /* Index of every dice in the list           */
 
             for (diceIndex = 0; diceIndex < MAXIMUM_DICE; diceIndex++)
                 dices[diceIndex] = new Dice();
         }
 
-        public void checkHoldButton() // Disable roll button if all dice are held
+        // Disable roll button if all dice are held
+        public void checkHoldButton()
         {
             if (dices[0].HoldState == true && dices[1].HoldState == true && dices[2].HoldState == true
                                            && dices[3].HoldState == true && dices[4].HoldState == true)
@@ -576,22 +625,9 @@ namespace Yahtzee
 
         }
 
-        
-        private void resetScoreboard() // Reset the scoreboard back to default value
+        // Reset the scoreboard back to default value
+        private void resetScoreboard()
         {
-            //onesButton.IsEnabled = true;
-            //twosButton.IsEnabled = true;
-            //threesButton.IsEnabled = true;
-            //foursButton.IsEnabled = true;
-            //fivesButton.IsEnabled = true;
-            //sixesButton.IsEnabled = true;
-            //threeOfAKindButton.IsEnabled = true;
-            //fourOfAKindButton.IsEnabled = true;
-            //fullHouseButton.IsEnabled = true;
-            //smallStraightButton.IsEnabled = true;
-            //largeStraightButton.IsEnabled = true;
-            //chanceButton.IsEnabled = true;
-            //yahtzeeButton.IsEnabled = true;
 
             onesButton.Content            = "";
             twosButton.Content            = "";
@@ -606,8 +642,12 @@ namespace Yahtzee
             largeStraightButton.Content   = "";
             chanceButton.Content          = "";
             yahtzeeButton.Content         = "";
+            numbersTotalTextBox.Text      = "";
+            numbersBonusTextBox.Text      = "";
+            grandTotalTextBox.Text        = "";
         }
 
+        // Changes the controls for the start of a new turn
         private void resetTurn()
         {
             count_roll = 0;

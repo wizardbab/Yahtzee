@@ -8,6 +8,20 @@ namespace Yahtzee
 {
     class Score
     {
+        int digitsCount = 0; // Counts the number of digit scores filled in
+        int totalCount = 0;  // Counts the number of scores filled in
+
+        public int DigitsCount
+        {
+            get;
+            set;
+        }
+
+        public int TotalCount
+        {
+            get;
+            set;
+        }
 
         // Calculates the number of points for a given number on the dice
         // and returns the number of points
