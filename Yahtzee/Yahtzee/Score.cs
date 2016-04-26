@@ -19,7 +19,7 @@ namespace Yahtzee
                 int count = 0;
                 for (int j = 0; j < 5; j++)
                 {
-                    if (dice[j] == i)
+                    if (dice[j].DiceNumber == i)
                         count++;
 
                     if (count > 2)
@@ -31,7 +31,7 @@ namespace Yahtzee
             {
                 for (int k = 0; k < 5; k++)
                 {
-                    sum += dice[k];
+                    sum += dice[k].DiceNumber;
                 }
             }
 
@@ -49,7 +49,7 @@ namespace Yahtzee
                 int count = 0;
                 for (int j = 0; j < 5; j++)
                 {
-                    if (dice[j] == i)
+                    if (dice[j].DiceNumber == i)
                         count++;
 
                     if (count > 3)
@@ -61,7 +61,7 @@ namespace Yahtzee
             {
                 for (int k = 0; k < 5; k++)
                 {
-                    sum += dice[k];
+                    sum += dice[k].DiceNumber;
                 }
             }
 
