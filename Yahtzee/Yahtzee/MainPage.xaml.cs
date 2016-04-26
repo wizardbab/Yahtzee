@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -25,43 +26,48 @@ namespace Yahtzee
         public MainPage()
         {
             this.InitializeComponent();
-            holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled =
-            holdDice4.IsEnabled = holdDice5.IsEnabled = holdDice6.IsEnabled = rollDiceBtn.IsEnabled = false;
+            holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled   =
+            holdDice4.IsEnabled = holdDice5.IsEnabled = rollDiceBtn.IsEnabled = false;
 
         }
-
-        // Global Variable
-        Dice[] dices = new Dice[maximumDice];
 
         // Symbolic Constant
-        const int maximumDice = 6; /* Maximum number of dices                                */
+        const int maximumDice = 5;  /* Maximum number of dices                               */
+        const int maximumRoll = 13; /* Maximum number of rolls per game                      */
 
-        #region Controls' Event Handler
-        // Start the game
-        private void startGame_Click(object sender, RoutedEventArgs e)
+        // Global Variable
+        Dice[] dices = new Dice[maximumDice]; /* Array of dice                               */
+        int click_number = 0;                 /* Keep track of number of button click(s)     */
+
+        // Controls' Event Handler
+        private void startGame_Click(object sender, RoutedEventArgs e) // Start YAHTZEE button
         {
+            /* Create multiple dice                                                          */
             initialDice();
-            rollDiceBtn.IsEnabled = true;
+
+            rollDiceBtn.IsEnabled  = true;
             startGameBtn.IsEnabled = false;
-            startGameBtn.Opacity = 0;
+            startGameBtn.Opacity   = 0;
         }
 
-        // Roll the dice
-        private void rollDiceBtn_Click(object sender, RoutedEventArgs e)
+        private void rollDiceBtn_Click(object sender, RoutedEventArgs e) // Roll the dice button
         {
             Random number = new Random();
-            int index;
+            int dice_index;               /* Index of every dice                             */
 
             /* Enable (Un)Hold button of each dice                                           */
             holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled =
-            holdDice4.IsEnabled = holdDice5.IsEnabled = holdDice6.IsEnabled = true;
+            holdDice4.IsEnabled = holdDice5.IsEnabled = true;
 
-            for (index = 0; index < maximumDice; index++)
+            /* The dice are (or is) rolling if it is not held                                */
+            for (dice_index = 0; dice_index < maximumDice; dice_index++)
             {
-                if (dices[index].HoldState == false)
-                    dices[index].DiceNumber = number.Next(1, 7);
+                if (dices[dice_index].HoldState == false)
+                    dices[dice_index].DiceNumber = number.Next(1, 7);
             }
 
+            /* Rolling the dice                                                              */
+            #region Rolling dice
             switch (dices[0].DiceNumber)
             {
                 case 1:
@@ -321,167 +327,123 @@ namespace Yahtzee
                     dice5_6.Opacity = 1;
                     break;
             }
+            #endregion
 
-            switch (dices[5].DiceNumber)
+            /* If the number of button clicks reach its maximum value, restart the game      */
+            click_number++;
+            if (click_number == maximumRoll)
             {
-                case 1:
-                    dice6_1.Opacity = 1;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 2:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 1;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 3:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 1;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 4:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 1;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 5:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 1;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 6:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 1;
-                    break;
+                rollDiceBtn.IsEnabled  = false;
+                startGameBtn.IsEnabled = true;
+                startGameBtn.Opacity   = 1;
+                startGameBtn.Content   = "Restart";
+                click_number           = 0;
+                markDice1.Opacity      = markDice2.Opacity = markDice3.Opacity = markDice4.Opacity
+                                       = markDice5.Opacity = 0;
+                holdDice1.Content      = holdDice2.Content = holdDice3.Content = holdDice4.Content
+                                       = holdDice5.Content = "Hold";
+                holdDice1.IsEnabled    = holdDice2.IsEnabled = holdDice3.IsEnabled
+                                       = holdDice4.IsEnabled = holdDice5.IsEnabled = false;
             }
         }
-        #endregion
 
-        // Hold the dice buttons
-        private void holdDice1Btn(object sender, RoutedEventArgs e)
+        #region Hold or unhold
+        private void holdDice1Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 1
         {
             if (dices[0].HoldState == false)
             {
                 dices[0].HoldState = true;
                 dices[0].holdValue(dices[0].DiceNumber);
-                markDice1.Opacity  = 1;
-                holdDice1.Content  = "Unhold";
+                markDice1.Opacity = 1;
+                holdDice1.Content = "Unhold";
             }
             else
             {
                 dices[0].HoldState = false;
-                markDice1.Opacity  = 0;
-                holdDice1.Content  = "Hold";
+                markDice1.Opacity = 0;
+                holdDice1.Content = "Hold";
             }
+            checkHoldButton();
         }
-        private void holdDice2Btn(object sender, RoutedEventArgs e)
+        private void holdDice2Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 2
         {
             if (dices[1].HoldState == false)
             {
                 dices[1].HoldState = true;
                 dices[1].holdValue(dices[1].DiceNumber);
-                markDice2.Opacity  = 1;
-                holdDice2.Content  = "Unhold";
+                markDice2.Opacity = 1;
+                holdDice2.Content = "Unhold";
             }
             else
             {
                 dices[1].HoldState = false;
-                markDice2.Opacity  = 0;
-                holdDice2.Content  = "Hold";
+                markDice2.Opacity = 0;
+                holdDice2.Content = "Hold";
             }
+            checkHoldButton();
         }
-        private void holdDice3Btn(object sender, RoutedEventArgs e)
+        private void holdDice3Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 3
         {
             if (dices[2].HoldState == false)
             {
                 dices[2].HoldState = true;
                 dices[2].holdValue(dices[2].DiceNumber);
-                markDice3.Opacity  = 1;
-                holdDice3.Content  = "Unhold";
+                markDice3.Opacity = 1;
+                holdDice3.Content = "Unhold";
             }
             else
             {
                 dices[2].HoldState = false;
-                markDice3.Opacity  = 0;
-                holdDice3.Content  = "Hold";
+                markDice3.Opacity = 0;
+                holdDice3.Content = "Hold";
             }
+            checkHoldButton();
         }
-        private void holdDice4Btn(object sender, RoutedEventArgs e)
+        private void holdDice4Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 4
         {
             if (dices[3].HoldState == false)
             {
                 dices[3].HoldState = true;
                 dices[3].holdValue(dices[3].DiceNumber);
-                markDice4.Opacity  = 1;
-                holdDice4.Content  = "Unhold";
+                markDice4.Opacity = 1;
+                holdDice4.Content = "Unhold";
             }
             else
             {
                 dices[3].HoldState = false;
-                markDice4.Opacity  = 0;
-                holdDice4.Content  = "Hold";
+                markDice4.Opacity = 0;
+                holdDice4.Content = "Hold";
             }
+            checkHoldButton();
         }
-        private void holdDice5Btn(object sender, RoutedEventArgs e)
+        private void holdDice5Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 5
         {
             if (dices[4].HoldState == false)
             {
                 dices[4].HoldState = true;
                 dices[4].holdValue(dices[4].DiceNumber);
-                markDice5.Opacity  = 1;
-                holdDice5.Content  = "Hold";
+                markDice5.Opacity = 1;
+                holdDice5.Content = "Unhold";
             }
             else
             {
                 dices[4].HoldState = false;
-                markDice5.Opacity  = 0;
-                holdDice5.Content  = "Unhold";
+                markDice5.Opacity = 0;
+                holdDice5.Content = "Hold";
             }
+            checkHoldButton();
         }
-        private void holdDice6Btn(object sender, RoutedEventArgs e)
-        {
-            if (dices[5].HoldState == false)
-            {
-                dices[5].HoldState = true;
-                dices[5].holdValue(dices[5].DiceNumber);
-                markDice6.Opacity  = 1;
-                holdDice6.Content  = "Unhold";
-            }
-            else
-            {
-                dices[5].HoldState = false;
-                markDice6.Opacity  = 0;
-                holdDice6.Content  = "Hold";
-            }
-        }
+        #endregion
 
         // Program Functions
-        public void initialDice()
+        public void initialDice() // Create an object of dice
         {
             int diceIndex;                       /* Index of every dice in the list          */
 
             for (diceIndex = 0; diceIndex < maximumDice; diceIndex++)
                 dices[diceIndex] = new Dice();
         }
+<<<<<<< HEAD
 
         private void digitsTextBox_Tapped(object sender, TappedRoutedEventArgs e)
         {
@@ -489,5 +451,18 @@ namespace Yahtzee
             ((TextBox)sender).IsTapEnabled = false;
         }
 
+=======
+        public void checkHoldButton() // Disable roll button if all dice are held
+        {
+            if (dices[0].HoldState == true && dices[1].HoldState == true && dices[2].HoldState == true
+                                           && dices[3].HoldState == true && dices[4].HoldState == true)
+            {
+                rollDiceBtn.IsEnabled = false;
+            }
+            else
+                rollDiceBtn.IsEnabled = true;
+
+        }
+>>>>>>> 994b788f39d6284abb89e7f5fce1c40e604555f8
     }
 }
