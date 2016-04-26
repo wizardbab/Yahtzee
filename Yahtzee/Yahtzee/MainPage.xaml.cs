@@ -54,6 +54,9 @@ namespace Yahtzee
             totalScore = 0;                    /* Stores the score for the entire game        */
 
         // Controls' Event Handler
+        private void gameTitle_SelectionChanged(object sender, RoutedEventArgs e) // Title of the program
+        { }
+
         private void startGame_Click(object sender, RoutedEventArgs e) // Start YAHTZEE button
         {
             /* Create multiple dice                                                           */
@@ -573,6 +576,7 @@ namespace Yahtzee
 
         }
 
+        
         private void resetScoreboard() // Reset the scoreboard back to default value
         {
             //onesButton.IsEnabled = true;
