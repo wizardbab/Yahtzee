@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 /*************************************************************************************************/
 /*                                                                                               */
-/* Specifications of the dice which contain information about the number of the dice and its  */
+/* Specifications of the dice which contain information about the current number of the dice and */
+/*                                        its current state                                      */
 /*                                                                                               */
 /*************************************************************************************************/
 
@@ -15,7 +16,7 @@ namespace Yahtzee
     class Dice
     {
         private bool holdState = false; /* State of the dice whether it is being held or not     */
-        private int  diceNumber;         /* Current value of the dice                             */
+        private int  diceNumber;        /* Current value of the dice                             */
 
         Random number = new Random();
 
@@ -32,11 +33,6 @@ namespace Yahtzee
         }
 
         // Methods
-        public void rollDice()
-        {
-            DiceNumber = number.Next(1, 7);
-        }
-
         public void holdValue(int currentNumber)
         {
             if (HoldState == true)

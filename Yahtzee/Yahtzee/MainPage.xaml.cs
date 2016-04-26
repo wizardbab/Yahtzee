@@ -16,33 +16,50 @@ using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
+/*********************************************************************************************/
+/*                                                                                           */
+/* This program is a yahtzee game, YAYZEE!!! The user rolls the dice, and the game will take */
+/* the current value of the dice that is(are) being held by the user. Then the game will     */
+/* calculate each of the scoreboard's category and show the user*/
+/*                                                                                           */
+/*********************************************************************************************/
+
 namespace Yahtzee
 {
     public sealed partial class MainPage : Page
     {
-        Score scoreboard = new Score();
-        int digitScore = 0; // Stores the score for the single digits
-        int totalScore = 0; // Stores the score for the entire game
         public MainPage()
         {
             this.InitializeComponent();
             holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled =
             holdDice4.IsEnabled = holdDice5.IsEnabled = rollDiceBtn.IsEnabled = false;
 
+            if (numbersTotalTextBox.Text != string.Empty)
+            {
+                startGameBtn.IsEnabled = true;
+                startGameBtn.Opacity = 1;
+                startGameBtn.Content = "Restart";
+            }
         }
 
         // Symbolic Constant
         const int MAXIMUM_DICE = 5;  /* Maximum number of dices                               */
-        const int MAXIMUM_ROLL = 13; /* Maximum number of rolls per game                      */
+        const int MAXIMUM_ROLL = 3;  /* Maximum number of rolls per game                      */
 
         // Global Variable
         Dice[] dices = new Dice[MAXIMUM_DICE]; /* Array of dice                               */
-        int click_number = 0;                 /* Keep track of number of button click(s)     */
+        Score scoreboard = new Score();
+        int count_roll = 0,                    /* Keep track of number of dice is roll        */
+            digitScore = 0,                    /* Stores the score for the single digits      */
+            totalScore = 0;                    /* Stores the score for the entire game        */
 
         // Controls' Event Handler
+        private void gameTitle_SelectionChanged(object sender, RoutedEventArgs e) // Title of the program
+        { }
+
         private void startGame_Click(object sender, RoutedEventArgs e) // Start YAHTZEE button
         {
-            /* Create multiple dice                                                          */
+            /* Create multiple dice                                                           */
             initialDice();
 
             rollDiceBtn.IsEnabled = true;
@@ -54,20 +71,62 @@ namespace Yahtzee
         private void rollDiceBtn_Click(object sender, RoutedEventArgs e) // Roll the dice button
         {
             Random number = new Random();
-            int dice_index;               /* Index of every dice                             */
+            int dice_index;               /* Index of every dice                              */
 
-            /* Enable (Un)Hold button of each dice                                           */
+            onesButton.IsEnabled = true;
+            twosButton.IsEnabled = true;
+            threesButton.IsEnabled = true;
+            foursButton.IsEnabled = true;
+            fivesButton.IsEnabled = true;
+            sixesButton.IsEnabled = true;
+            threeOfAKindButton.IsEnabled = true;
+            fourOfAKindButton.IsEnabled = true;
+            fullHouseButton.IsEnabled = true;
+            smallStraightButton.IsEnabled = true;
+            largeStraightButton.IsEnabled = true;
+            chanceButton.IsEnabled = true;
+            yahtzeeButton.IsEnabled = true;
+
+            /* Enable Scoreboard Buttons                                                      */
+            if (onesButton.Content as string != string.Empty)
+               onesButton.IsEnabled = false;
+            if (twosButton.Content as string != string.Empty)
+               twosButton.IsEnabled = false;
+            if (threesButton.Content as string != string.Empty)
+               threesButton.IsEnabled = false;
+            if (foursButton.Content as string != string.Empty)
+               foursButton.IsEnabled = false;
+            if (fivesButton.Content as string != string.Empty)
+                fivesButton.IsEnabled = false;
+            if (sixesButton.Content as string != string.Empty)
+                sixesButton.IsEnabled = false;
+            if (threeOfAKindButton.Content as string != string.Empty)
+                threeOfAKindButton.IsEnabled = false;
+            if (fourOfAKindButton.Content as string != string.Empty)
+                fourOfAKindButton.IsEnabled = false;
+            if (fullHouseButton.Content as string != string.Empty)
+                fullHouseButton.IsEnabled = false;
+            if (smallStraightButton.Content as string != string.Empty)
+                smallStraightButton.IsEnabled = false;
+            if (largeStraightButton.Content as string != string.Empty)
+                largeStraightButton.IsEnabled = false;
+            if (chanceButton.Content as string != string.Empty)
+                chanceButton.IsEnabled = false;
+            if (yahtzeeButton.Content as string != string.Empty)
+                yahtzeeButton.IsEnabled = false;
+
+            /* Enable (Un)Hold button of each dice                                            */
             holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled =
             holdDice4.IsEnabled = holdDice5.IsEnabled = true;
 
-            /* The dice are (or is) rolling if it is not held                                */
+            /* The dice are (or is) rolling if it is not held                                 */
             for (dice_index = 0; dice_index < MAXIMUM_DICE; dice_index++)
             {
                 if (dices[dice_index].HoldState == false)
                     dices[dice_index].DiceNumber = number.Next(1, 7);
             }
 
-            /* Rolling the dice                                                              */
+            /* Rolling the dice                                                               */
             #region Rolling dice
             switch (dices[0].DiceNumber)
             {
@@ -330,21 +389,16 @@ namespace Yahtzee
             }
             #endregion
 
-            /* If the number of button clicks reach its maximum value, restart the game      */
-            click_number++;
-            if (click_number == MAXIMUM_ROLL)
+            /* If the number of button clicks reach its maximum value, restart the game       */
+            count_roll++;
+            if (count_roll == MAXIMUM_ROLL)
             {
                 rollDiceBtn.IsEnabled = false;
-                startGameBtn.IsEnabled = true;
-                startGameBtn.Opacity = 1;
-                startGameBtn.Content = "Restart";
-                click_number = 0;
-                markDice1.Opacity = markDice2.Opacity = markDice3.Opacity = markDice4.Opacity
-                                       = markDice5.Opacity = 0;
-                holdDice1.Content = holdDice2.Content = holdDice3.Content = holdDice4.Content
-                                       = holdDice5.Content = "Hold";
-                holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled
-                                       = holdDice4.IsEnabled = holdDice5.IsEnabled = false;
+                count_roll = 0;
+                markDice1.Opacity = markDice2.Opacity = markDice3.Opacity = markDice4.Opacity = markDice5.Opacity = 0;
+                holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled = holdDice4.IsEnabled = holdDice5.IsEnabled = false;
+                holdDice1.Content = holdDice2.Content = holdDice3.Content = holdDice4.Content = holdDice5.Content = "Hold";
+
             }
         }
 
@@ -435,11 +489,76 @@ namespace Yahtzee
             checkHoldButton();
         }
         #endregion
+        #region ScoreBoard button
+        private void digitButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Content = scoreboard.calculateDigits(int.Parse(((Button)sender).Tag.ToString()), dices);
+            ((Button)sender).IsEnabled = false;
+            resetTurn();
+        }
+
+        private void threeOfAKindButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Content = scoreboard.calculateThreeOfAKind(dices);
+            ((Button)sender).IsEnabled = false;
+            resetTurn();
+        }
+
+        private void fourOfAKindButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Content = scoreboard.calculateFourOfAKind(dices);
+            ((Button)sender).IsEnabled = false;
+            resetTurn();
+        }
+
+        private void fullHouseButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Content = scoreboard.calculateFullHouse(dices);
+            ((Button)sender).IsEnabled = false;
+            resetTurn();
+        }
+
+        private void smallStraightButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Content = scoreboard.calculateSmallStraight(dices);
+            ((Button)sender).IsEnabled = false;
+            resetTurn();
+        }
+
+        private void largeStraightButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Content = scoreboard.calculateLargeStraight(dices);
+            ((Button)sender).IsEnabled = false;
+        }
+
+        private void chanceButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Content = scoreboard.calculateChance(dices);
+            ((Button)sender).IsEnabled = false;
+            resetTurn();
+        }
+
+        private void yahtzeeButton_Clicked(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Content = scoreboard.calculateYahtzee(dices);
+            ((Button)sender).IsEnabled = false;
+            resetTurn();
+        }
+
+        private void numbersBonusTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if(digitScore >= 63)
+            {
+                totalScore += 35;
+                numbersBonusTextBox.Text = "35";
+            }
+        }
+        #endregion
 
         // Program Functions
         public void initialDice() // Create an object of dice
         {
-            int diceIndex;                       /* Index of every dice in the list          */
+            int diceIndex;                       /* Index of every dice in the list           */
 
             for (diceIndex = 0; diceIndex < MAXIMUM_DICE; diceIndex++)
                 dices[diceIndex] = new Dice();
@@ -457,92 +576,49 @@ namespace Yahtzee
 
         }
 
-        private void digitButton_Clicked(object sender, RoutedEventArgs e)
+        
+        private void resetScoreboard() // Reset the scoreboard back to default value
         {
-            ((Button)sender).Content = scoreboard.calculateDigits(int.Parse(((Button)sender).Tag.ToString()), dices);
-            ((Button)sender).IsEnabled = false;
+            //onesButton.IsEnabled = true;
+            //twosButton.IsEnabled = true;
+            //threesButton.IsEnabled = true;
+            //foursButton.IsEnabled = true;
+            //fivesButton.IsEnabled = true;
+            //sixesButton.IsEnabled = true;
+            //threeOfAKindButton.IsEnabled = true;
+            //fourOfAKindButton.IsEnabled = true;
+            //fullHouseButton.IsEnabled = true;
+            //smallStraightButton.IsEnabled = true;
+            //largeStraightButton.IsEnabled = true;
+            //chanceButton.IsEnabled = true;
+            //yahtzeeButton.IsEnabled = true;
+
+            onesButton.Content            = "";
+            twosButton.Content            = "";
+            threesButton.Content          = "";
+            foursButton.Content           = "";
+            fivesButton.Content           = "";
+            sixesButton.Content           = "";
+            threeOfAKindButton.Content    = "";
+            fourOfAKindButton.Content     = "";
+            fullHouseButton.Content       = "";
+            smallStraightButton.Content   = "";
+            largeStraightButton.Content   = "";
+            chanceButton.Content          = "";
+            yahtzeeButton.Content         = "";
         }
 
-        private void threeOfAKindButton_Clicked(object sender, RoutedEventArgs e)
+        private void resetTurn()
         {
-            ((Button)sender).Content = scoreboard.calculateThreeOfAKind(dices);
-            ((Button)sender).IsEnabled = false;
-        }
-
-        private void fourOfAKindButton_Clicked(object sender, RoutedEventArgs e)
-        {
-            ((Button)sender).Content = scoreboard.calculateFourOfAKind(dices);
-            ((Button)sender).IsEnabled = false;
-        }
-
-        private void fullHouseButton_Clicked(object sender, RoutedEventArgs e)
-        {
-            ((Button)sender).Content = scoreboard.calculateFullHouse(dices);
-            ((Button)sender).IsEnabled = false;
-        }
-
-        private void smallStraightButton_Clicked(object sender, RoutedEventArgs e)
-        {
-            ((Button)sender).Content = scoreboard.calculateSmallStraight(dices);
-            ((Button)sender).IsEnabled = false;
-        }
-
-        private void largeStraightButton_Clicked(object sender, RoutedEventArgs e)
-        {
-            ((Button)sender).Content = scoreboard.calculateLargeStraight(dices);
-            ((Button)sender).IsEnabled = false;
-        }
-
-        private void chanceButton_Clicked(object sender, RoutedEventArgs e)
-        {
-            ((Button)sender).Content = scoreboard.calculateChance(dices);
-            ((Button)sender).IsEnabled = false;
-        }
-
-        private void yahtzeeButton_Clicked(object sender, RoutedEventArgs e)
-        {
-            ((Button)sender).Content = scoreboard.calculateYahtzee(dices);
-            ((Button)sender).IsEnabled = false;
-        }
-
-        private void numbersBonusTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if(digitScore >= 63)
-            {
-                totalScore += 35;
-                numbersBonusTextBox.Text = "35";
-            }
-        }
-
-        private void resetScoreboard()
-        {
-            onesButton.IsEnabled = true;
-            twosButton.IsEnabled = true;
-            threesButton.IsEnabled = true;
-            foursButton.IsEnabled = true;
-            fivesButton.IsEnabled = true;
-            sixesButton.IsEnabled = true;
-            threeOfAKindButton.IsEnabled = true;
-            fourOfAKindButton.IsEnabled = true;
-            fullHouseButton.IsEnabled = true;
-            smallStraightButton.IsEnabled = true;
-            largeStraightButton.IsEnabled = true;
-            chanceButton.IsEnabled = true;
-            yahtzeeButton.IsEnabled = true;
-
-            onesButton.Content = "";
-            twosButton.Content = "";
-            threesButton.Content = "";
-            foursButton.Content = "";
-            fivesButton.Content = "";
-            sixesButton.Content = "";
-            threeOfAKindButton.Content = "";
-            fourOfAKindButton.Content = "";
-            fullHouseButton.Content = "";
-            smallStraightButton.Content = "";
-            largeStraightButton.Content = "";
-            chanceButton.Content = "";
-            yahtzeeButton.Content = "";
+            count_roll = 0;
+            markDice1.Opacity = markDice2.Opacity = markDice3.Opacity = markDice4.Opacity = markDice5.Opacity = 0;
+            holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled = holdDice4.IsEnabled = holdDice5.IsEnabled = false;
+            dices[0].HoldState = dices[1].HoldState = dices[2].HoldState = dices[3].HoldState = dices[4].HoldState = false;
+            holdDice1.Content = holdDice2.Content = holdDice3.Content = holdDice4.Content = holdDice5.Content = "Hold";
+            rollDiceBtn.IsEnabled = true;
+            onesButton.IsEnabled = twosButton.IsEnabled = threesButton.IsEnabled = foursButton.IsEnabled = fivesButton.IsEnabled =
+                sixesButton.IsEnabled = threeOfAKindButton.IsEnabled = fourOfAKindButton.IsEnabled = fullHouseButton.IsEnabled =
+                smallStraightButton.IsEnabled = largeStraightButton.IsEnabled = chanceButton.IsEnabled = yahtzeeButton.IsEnabled = false;
         }
     }
 }
