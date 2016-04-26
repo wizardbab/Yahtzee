@@ -26,13 +26,13 @@ namespace Yahtzee
         public MainPage()
         {
             this.InitializeComponent();
-            holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled =
-            holdDice4.IsEnabled = holdDice5.IsEnabled = holdDice6.IsEnabled = rollDiceBtn.IsEnabled = false;
+            holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled   =
+            holdDice4.IsEnabled = holdDice5.IsEnabled = rollDiceBtn.IsEnabled = false;
 
         }
 
         // Symbolic Constant
-        const int maximumDice = 6;  /* Maximum number of dices                               */
+        const int maximumDice = 5;  /* Maximum number of dices                               */
         const int maximumRoll = 13; /* Maximum number of rolls per game                      */
 
         // Global Variable
@@ -57,7 +57,7 @@ namespace Yahtzee
 
             /* Enable (Un)Hold button of each dice                                           */
             holdDice1.IsEnabled = holdDice2.IsEnabled = holdDice3.IsEnabled =
-            holdDice4.IsEnabled = holdDice5.IsEnabled = holdDice6.IsEnabled = true;
+            holdDice4.IsEnabled = holdDice5.IsEnabled = true;
 
             /* The dice are (or is) rolling if it is not held                                */
             for (dice_index = 0; dice_index < maximumDice; dice_index++)
@@ -327,58 +327,6 @@ namespace Yahtzee
                     dice5_6.Opacity = 1;
                     break;
             }
-
-            switch (dices[5].DiceNumber)
-            {
-                case 1:
-                    dice6_1.Opacity = 1;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 2:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 1;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 3:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 1;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 4:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 1;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 5:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 1;
-                    dice6_6.Opacity = 0;
-                    break;
-                case 6:
-                    dice6_1.Opacity = 0;
-                    dice6_2.Opacity = 0;
-                    dice6_3.Opacity = 0;
-                    dice6_4.Opacity = 0;
-                    dice6_5.Opacity = 0;
-                    dice6_6.Opacity = 1;
-                    break;
-            }
             #endregion
 
             /* If the number of button clicks reach its maximum value, restart the game      */
@@ -390,6 +338,12 @@ namespace Yahtzee
                 startGameBtn.Opacity   = 1;
                 startGameBtn.Content   = "Restart";
                 click_number           = 0;
+                markDice1.Opacity      = markDice2.Opacity = markDice3.Opacity = markDice4.Opacity
+                                       = markDice5.Opacity = 0;
+                holdDice1.Content      = holdDice2.Content = holdDice3.Content = holdDice4.Content
+                                       = holdDice5.Content = "Hold";
+                holdDice1.IsEnabled    = holdDice2.IsEnabled = holdDice3.IsEnabled
+                                       = holdDice4.IsEnabled = holdDice5.IsEnabled = false;
             }
         }
 
@@ -465,29 +419,13 @@ namespace Yahtzee
                 dices[4].HoldState = true;
                 dices[4].holdValue(dices[4].DiceNumber);
                 markDice5.Opacity = 1;
-                holdDice5.Content = "Hold";
+                holdDice5.Content = "Unhold";
             }
             else
             {
                 dices[4].HoldState = false;
                 markDice5.Opacity = 0;
-                holdDice5.Content = "Unhold";
-            }
-        }
-        private void holdDice6Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 6
-        {
-            if (dices[5].HoldState == false)
-            {
-                dices[5].HoldState = true;
-                dices[5].holdValue(dices[5].DiceNumber);
-                markDice6.Opacity = 1;
-                holdDice6.Content = "Unhold";
-            }
-            else
-            {
-                dices[5].HoldState = false;
-                markDice6.Opacity = 0;
-                holdDice6.Content = "Hold";
+                holdDice5.Content = "Hold";
             }
         }
         #endregion
