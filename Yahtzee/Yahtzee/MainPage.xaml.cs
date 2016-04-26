@@ -384,11 +384,13 @@ namespace Yahtzee
                 dices[0].HoldState = true;
                 dices[0].holdValue(dices[0].DiceNumber);
                 markDice1.Opacity = 1;
+                holdDice1.Content = "Unhold";
             }
             else
             {
                 dices[0].HoldState = false;
                 markDice1.Opacity = 0;
+                holdDice1.Content = "Hold";
             }
         }
         private void holdDice2Btn(object sender, RoutedEventArgs e)
