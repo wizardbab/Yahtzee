@@ -17,11 +17,11 @@ using Windows.UI.Xaml.Navigation;
 
 namespace Yahtzee
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
     public sealed partial class MainPage : Page
     {
+        Score scoreboard = new Score();
+        int digitScore = 0; // Stores the score for the single digits
+        int totalScore = 0; // Stores the score for the entire game
         public MainPage()
         {
             this.InitializeComponent();
@@ -482,5 +482,12 @@ namespace Yahtzee
             for (diceIndex = 0; diceIndex < maximumDice; diceIndex++)
                 dices[diceIndex] = new Dice();
         }
+
+        private void digitsTextBox_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            digitScore += scoreboard.calculateDigits(int.Parse(((TextBox)sender).Tag.ToString()), dices);
+            ((TextBox)sender).IsTapEnabled = false;
+        }
+
     }
 }

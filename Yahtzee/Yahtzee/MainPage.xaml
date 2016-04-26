@@ -69,52 +69,52 @@
 
         <TextBlock x:Name="playerTextBlock" HorizontalAlignment="Left" Margin="1000,67,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Width="64" TextAlignment="Center"/>
 
-        <TextBox x:Name="onesTextBox" HorizontalAlignment="Left" Margin="1000,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBox x:Name="onesTextBox" HorizontalAlignment="Left" Margin="1000,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="1"/>
         <TextBlock x:Name="onesTextBlock" HorizontalAlignment="Left" Margin="960,105,0,0" TextWrapping="Wrap" Text="Ones" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="twosTextBox" HorizontalAlignment="Left" Margin="1000,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBox x:Name="twosTextBox" HorizontalAlignment="Left" Margin="1000,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="2"/>
         <TextBlock x:Name="twosTextBlock" HorizontalAlignment="Left" Margin="961,137,0,0" TextWrapping="Wrap" Text="Twos" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="threesTextBox" HorizontalAlignment="Left" Margin="1000,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBox x:Name="threesTextBox" HorizontalAlignment="Left" Margin="1000,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="3"/>
         <TextBlock x:Name="threesTextBlock" HorizontalAlignment="Left" Margin="950,169,0,0" TextWrapping="Wrap" Text="Threes" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="foursTextBox" HorizontalAlignment="Left" Margin="1000,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBox x:Name="foursTextBox" HorizontalAlignment="Left" Margin="1000,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="4"/>
         <TextBlock x:Name="foursTextBlock" HorizontalAlignment="Left" Margin="958,201,0,0" TextWrapping="Wrap" Text="Fours" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="fivesTextBox" HorizontalAlignment="Left" Margin="1000,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBox x:Name="fivesTextBox" HorizontalAlignment="Left" Margin="1000,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="5"/>
         <TextBlock x:Name="fivesTextBlock" HorizontalAlignment="Left" Margin="962,233,0,0" TextWrapping="Wrap" Text="Fives" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="sixesTextBox" HorizontalAlignment="Left" Margin="1000,259,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBox x:Name="sixesTextBox" HorizontalAlignment="Left" Margin="1000,259,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="6"/>
         <TextBlock x:Name="sixesTextBlock" HorizontalAlignment="Left" Margin="961,265,0,0" TextWrapping="Wrap" Text="Sixes" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="numbersTotalTextBox" HorizontalAlignment="Left" Margin="1000,291,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="numbersTotalTextBlock" HorizontalAlignment="Left" Margin="965,297,0,0" TextWrapping="Wrap" Text="Sum" VerticalAlignment="Top"/>
+        <TextBox x:Name="numbersTotalTextBox" HorizontalAlignment="Left" Margin="1000,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" BorderBrush="Black"/>
+        <TextBlock x:Name="numbersTotalTextBlock" HorizontalAlignment="Left" Margin="965,307,0,0" TextWrapping="Wrap" Text="Sum" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="numbersBonusTextBox" HorizontalAlignment="Left" Margin="1000,323,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="numbersBonusTextBlock" HorizontalAlignment="Left" Margin="953,329,0,0" TextWrapping="Wrap" Text="Bonus" VerticalAlignment="Top"/>
+        <TextBox x:Name="numbersBonusTextBox" HorizontalAlignment="Left" Margin="1000,333,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" BorderBrush="Black"/>
+        <TextBlock x:Name="numbersBonusTextBlock" HorizontalAlignment="Left" Margin="953,339,0,0" TextWrapping="Wrap" Text="Bonus" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="threeOfAKindTextBox" HorizontalAlignment="Left" Margin="1000,355,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="threeOfAKindTextBlock" HorizontalAlignment="Left" Margin="894,361,0,0" TextWrapping="Wrap" Text="Three of a Kind" VerticalAlignment="Top"/>
+        <TextBox x:Name="threeOfAKindTextBox" HorizontalAlignment="Left" Margin="1000,375,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBlock x:Name="threeOfAKindTextBlock" HorizontalAlignment="Left" Margin="894,381,0,0" TextWrapping="Wrap" Text="Three of a Kind" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="fourOfAKindTextBox" HorizontalAlignment="Left" Margin="1000,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="fourOfAKindTextBlock" HorizontalAlignment="Left" Margin="901,393,0,0" TextWrapping="Wrap" Text="Four of a Kind" VerticalAlignment="Top"/>
+        <TextBox x:Name="fourOfAKindTextBox" HorizontalAlignment="Left" Margin="1000,407,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBlock x:Name="fourOfAKindTextBlock" HorizontalAlignment="Left" Margin="901,413,0,0" TextWrapping="Wrap" Text="Four of a Kind" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="fullHouseTextBox" HorizontalAlignment="Left" Margin="1000,419,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="fullHouseTextBlock" HorizontalAlignment="Left" Margin="925,425,0,0" TextWrapping="Wrap" Text="Full House" VerticalAlignment="Top"/>
+        <TextBox x:Name="fullHouseTextBox" HorizontalAlignment="Left" Margin="1000,439,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBlock x:Name="fullHouseTextBlock" HorizontalAlignment="Left" Margin="925,445,0,0" TextWrapping="Wrap" Text="Full House" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="smallStraightTextBox" HorizontalAlignment="Left" Margin="1000,451,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="smallStraightTextBloxk" HorizontalAlignment="Left" Margin="903,457,0,0" TextWrapping="Wrap" Text="Small Straight" VerticalAlignment="Top"/>
+        <TextBox x:Name="smallStraightTextBox" HorizontalAlignment="Left" Margin="1000,471,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBlock x:Name="smallStraightTextBloxk" HorizontalAlignment="Left" Margin="903,477,0,0" TextWrapping="Wrap" Text="Small Straight" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="largeStraightTextBox" HorizontalAlignment="Left" Margin="1000,483,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="largeStraightTextBlock" HorizontalAlignment="Left" Margin="902,489,0,0" TextWrapping="Wrap" Text="Large Straight" VerticalAlignment="Top"/>
+        <TextBox x:Name="largeStraightTextBox" HorizontalAlignment="Left" Margin="1000,503,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBlock x:Name="largeStraightTextBlock" HorizontalAlignment="Left" Margin="902,509,0,0" TextWrapping="Wrap" Text="Large Straight" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="chanceTextBox" HorizontalAlignment="Left" Margin="1000,515,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="chanceTextBlock" HorizontalAlignment="Left" Margin="945,521,0,0" TextWrapping="Wrap" Text="Chance" VerticalAlignment="Top"/>
+        <TextBox x:Name="chanceTextBox" HorizontalAlignment="Left" Margin="1000,535,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBlock x:Name="chanceTextBlock" HorizontalAlignment="Left" Margin="945,541,0,0" TextWrapping="Wrap" Text="Chance" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="yahtzeeTextBox" HorizontalAlignment="Left" Margin="1000,547,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="yahtzeeTextBlock" HorizontalAlignment="Left" Margin="931,553,0,0" TextWrapping="Wrap" Text="YAHTZEE!" VerticalAlignment="Top"/>
+        <TextBox x:Name="yahtzeeTextBox" HorizontalAlignment="Left" Margin="1000,567,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <TextBlock x:Name="yahtzeeTextBlock" HorizontalAlignment="Left" Margin="931,573,0,0" TextWrapping="Wrap" Text="YAHTZEE!" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="grandTotalTextBox" HorizontalAlignment="Left" Margin="1000,579,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="grandTotalTextBlock" HorizontalAlignment="Left" Margin="922,585,0,0" TextWrapping="Wrap" Text="Total Score" VerticalAlignment="Top"/>
+        <TextBox x:Name="grandTotalTextBox" HorizontalAlignment="Left" Margin="1000,609,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" BorderBrush="Black"/>
+        <TextBlock x:Name="grandTotalTextBlock" HorizontalAlignment="Left" Margin="922,615,0,0" TextWrapping="Wrap" Text="Total Score" VerticalAlignment="Top"/>
     </Grid>
 </Page>
