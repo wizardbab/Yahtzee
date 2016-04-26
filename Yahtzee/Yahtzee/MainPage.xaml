@@ -60,52 +60,53 @@
 
         <TextBlock x:Name="playerTextBlock" HorizontalAlignment="Left" Margin="1000,67,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Width="64" TextAlignment="Center"/>
 
-        <TextBox x:Name="onesTextBox" HorizontalAlignment="Left" Margin="1000,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="1"/>
+        <Button x:Name="onesButton" Content="" HorizontalAlignment="Left" Margin="1000,101,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="1" Click="digitButton_Clicked" IsEnabled="False"/>
         <TextBlock x:Name="onesTextBlock" HorizontalAlignment="Left" Margin="960,105,0,0" TextWrapping="Wrap" Text="Ones" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="twosTextBox" HorizontalAlignment="Left" Margin="1000,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="2"/>
+        <Button x:Name="twosButton" Content="" HorizontalAlignment="Left" Margin="1000,133,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="2" Click="digitButton_Clicked" IsEnabled="False"/>
         <TextBlock x:Name="twosTextBlock" HorizontalAlignment="Left" Margin="961,137,0,0" TextWrapping="Wrap" Text="Twos" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="threesTextBox" HorizontalAlignment="Left" Margin="1000,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="3"/>
+        <Button x:Name="threesButton" Content="" HorizontalAlignment="Left" Margin="1000,165,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="3" Click="digitButton_Clicked" IsEnabled="False"/>
         <TextBlock x:Name="threesTextBlock" HorizontalAlignment="Left" Margin="950,169,0,0" TextWrapping="Wrap" Text="Threes" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="foursTextBox" HorizontalAlignment="Left" Margin="1000,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="4"/>
+        <Button x:Name="foursButton" Content="" HorizontalAlignment="Left" Margin="1000,197,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="4" Click="digitButton_Clicked" IsEnabled="False"/>
         <TextBlock x:Name="foursTextBlock" HorizontalAlignment="Left" Margin="958,201,0,0" TextWrapping="Wrap" Text="Fours" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="fivesTextBox" HorizontalAlignment="Left" Margin="1000,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="5"/>
+        <Button x:Name="fivesButton" Content="" HorizontalAlignment="Left" Margin="1000,229,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="5" Click="digitButton_Clicked" IsEnabled="False"/>
         <TextBlock x:Name="fivesTextBlock" HorizontalAlignment="Left" Margin="962,233,0,0" TextWrapping="Wrap" Text="Fives" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="sixesTextBox" HorizontalAlignment="Left" Margin="1000,259,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" Tapped="digitsTextBox_Tapped" Tag="6"/>
+        <Button x:Name="sixesButton" Content="" HorizontalAlignment="Left" Margin="1000,261,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="6" Click="digitButton_Clicked" IsEnabled="False"/>
         <TextBlock x:Name="sixesTextBlock" HorizontalAlignment="Left" Margin="961,265,0,0" TextWrapping="Wrap" Text="Sixes" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="numbersTotalTextBox" HorizontalAlignment="Left" Margin="1000,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" BorderBrush="Black"/>
+        <TextBox x:Name="numbersTotalTextBox" HorizontalAlignment="Left" Margin="1000,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False"/>
         <TextBlock x:Name="numbersTotalTextBlock" HorizontalAlignment="Left" Margin="965,307,0,0" TextWrapping="Wrap" Text="Sum" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="numbersBonusTextBox" HorizontalAlignment="Left" Margin="1000,333,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" BorderBrush="Black"/>
+        <TextBox x:Name="numbersBonusTextBox" HorizontalAlignment="Left" Margin="1000,333,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False" TextChanged="numbersBonusTextBox_TextChanged"/>
         <TextBlock x:Name="numbersBonusTextBlock" HorizontalAlignment="Left" Margin="953,339,0,0" TextWrapping="Wrap" Text="Bonus" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="threeOfAKindTextBox" HorizontalAlignment="Left" Margin="1000,375,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <Button x:Name="threeOfAKindButton" Content="" HorizontalAlignment="Left" Margin="1000,375,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="threeOfAKindButton_Clicked"/>
         <TextBlock x:Name="threeOfAKindTextBlock" HorizontalAlignment="Left" Margin="894,381,0,0" TextWrapping="Wrap" Text="Three of a Kind" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="fourOfAKindTextBox" HorizontalAlignment="Left" Margin="1000,407,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <Button x:Name="fourOfAKindButton" Content="" HorizontalAlignment="Left" Margin="1000,407,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="fourOfAKindButton_Clicked"/>
         <TextBlock x:Name="fourOfAKindTextBlock" HorizontalAlignment="Left" Margin="901,413,0,0" TextWrapping="Wrap" Text="Four of a Kind" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="fullHouseTextBox" HorizontalAlignment="Left" Margin="1000,439,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <Button x:Name="fullHouseButton" Content="" HorizontalAlignment="Left" Margin="1000,439,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="fullHouseButton_Clicked"/>
         <TextBlock x:Name="fullHouseTextBlock" HorizontalAlignment="Left" Margin="925,445,0,0" TextWrapping="Wrap" Text="Full House" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="smallStraightTextBox" HorizontalAlignment="Left" Margin="1000,471,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <Button x:Name="smallStraightButton" Content="" HorizontalAlignment="Left" Margin="1000,471,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="smallStraightButton_Clicked"/>
         <TextBlock x:Name="smallStraightTextBloxk" HorizontalAlignment="Left" Margin="903,477,0,0" TextWrapping="Wrap" Text="Small Straight" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="largeStraightTextBox" HorizontalAlignment="Left" Margin="1000,503,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <Button x:Name="largeStraightButton" Content="" HorizontalAlignment="Left" Margin="1000,503,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="largeStraightButton_Clicked"/>
         <TextBlock x:Name="largeStraightTextBlock" HorizontalAlignment="Left" Margin="902,509,0,0" TextWrapping="Wrap" Text="Large Straight" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="chanceTextBox" HorizontalAlignment="Left" Margin="1000,535,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <Button x:Name="chanceButton" Content="" HorizontalAlignment="Left" Margin="1000,535,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="chanceButton_Clicked"/>
         <TextBlock x:Name="chanceTextBlock" HorizontalAlignment="Left" Margin="945,541,0,0" TextWrapping="Wrap" Text="Chance" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="yahtzeeTextBox" HorizontalAlignment="Left" Margin="1000,567,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
+        <Button x:Name="yahtzeeButton" Content="" HorizontalAlignment="Left" Margin="1000,567,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="yahtzeeButton_Clicked"/>
         <TextBlock x:Name="yahtzeeTextBlock" HorizontalAlignment="Left" Margin="931,573,0,0" TextWrapping="Wrap" Text="YAHTZEE!" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="grandTotalTextBox" HorizontalAlignment="Left" Margin="1000,609,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" BorderBrush="Black"/>
+        <TextBox x:Name="grandTotalTextBox" HorizontalAlignment="Left" Margin="1000,609,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False"/>
         <TextBlock x:Name="grandTotalTextBlock" HorizontalAlignment="Left" Margin="922,615,0,0" TextWrapping="Wrap" Text="Total Score" VerticalAlignment="Top"/>
+
     </Grid>
 </Page>

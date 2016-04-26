@@ -56,7 +56,7 @@ namespace Yahtzee
         }
 
         // Calculates whether there is a four of a kind and return the number of points
-        public int CalculateFourOfAKind(Dice[] dice)
+        public int calculateFourOfAKind(Dice[] dice)
         {
             int sum = 0;
 
