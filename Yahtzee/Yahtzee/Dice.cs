@@ -4,12 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*************************************************************************************************/
+/*                                                                                               */
+/* Specifications of the dice which contain information about the number of the dice and its  */
+/*                                                                                               */
+/*************************************************************************************************/
+
 namespace Yahtzee
 {
     class Dice
     {
         private bool holdState = false; /* State of the dice whether it is being held or not     */
-        private int diceNumber;         /* Current value of the dice                             */
+        private int  diceNumber;         /* Current value of the dice                             */
 
         Random number = new Random();
 

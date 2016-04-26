@@ -56,15 +56,6 @@
         <Image x:Name="dice5_6" HorizontalAlignment="Left" Height="72" Margin="44,387,0,0" VerticalAlignment="Top" Width="75" Source="dice6.png" Opacity="0"/>
         <Button x:Name="holdDice5" Content="Hold" HorizontalAlignment="Left" Margin="159,401,0,0" VerticalAlignment="Top" Height="44" Width="100" FontWeight="Bold" Click="holdDice5Btn" Foreground="Red" Background="#FF4D4A4A"/>
 
-        <Rectangle x:Name="markDice6" Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="82" Margin="40,475,0,0" Stroke="Red" VerticalAlignment="Top" Width="82" StrokeThickness="10" Opacity="0"/>
-        <Image x:Name="dice6_6" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="87" Source="dice6.png"/>
-        <Image x:Name="dice6_1" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice1.png" Opacity="0"/>
-        <Image x:Name="dice6_2" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice2.png" Opacity="0"/>
-        <Image x:Name="dice6_3" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice3.png" Opacity="0"/>
-        <Image x:Name="dice6_4" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice4.png" Opacity="0"/>
-        <Image x:Name="dice6_5" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice5.png" Opacity="0"/>
-        <Button x:Name="holdDice6" Content="Hold" HorizontalAlignment="Left" Margin="159,494,0,0" VerticalAlignment="Top" Height="44" Width="100" Click="holdDice6Btn" FontWeight="Bold" Foreground="Red" Background="#FF4D4A4A"/>
-
         <Button x:Name="startGameBtn" Content="START" HorizontalAlignment="Left" Margin="512,309,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="startGame_Click" Height="120" Width="244" Foreground="Red" Background="#FF4D4A4A" FontSize="48"/>
 
         <TextBlock x:Name="playerTextBlock" HorizontalAlignment="Left" Margin="1000,67,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Width="64" TextAlignment="Center"/>
