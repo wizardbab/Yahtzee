@@ -363,6 +363,7 @@ namespace Yahtzee
                 markDice1.Opacity = 0;
                 holdDice1.Content = "Hold";
             }
+            checkHoldButton();
         }
         private void holdDice2Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 2
         {
@@ -379,6 +380,7 @@ namespace Yahtzee
                 markDice2.Opacity = 0;
                 holdDice2.Content = "Hold";
             }
+            checkHoldButton();
         }
         private void holdDice3Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 3
         {
@@ -395,6 +397,7 @@ namespace Yahtzee
                 markDice3.Opacity = 0;
                 holdDice3.Content = "Hold";
             }
+            checkHoldButton();
         }
         private void holdDice4Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 4
         {
@@ -411,6 +414,7 @@ namespace Yahtzee
                 markDice4.Opacity = 0;
                 holdDice4.Content = "Hold";
             }
+            checkHoldButton();
         }
         private void holdDice5Btn(object sender, RoutedEventArgs e) // Hold or unhold dice number 5
         {
@@ -427,6 +431,7 @@ namespace Yahtzee
                 markDice5.Opacity = 0;
                 holdDice5.Content = "Hold";
             }
+            checkHoldButton();
         }
         #endregion
 
@@ -437,6 +442,17 @@ namespace Yahtzee
 
             for (diceIndex = 0; diceIndex < maximumDice; diceIndex++)
                 dices[diceIndex] = new Dice();
+        }
+        public void checkHoldButton() // Disable roll button if all dice are held
+        {
+            if (dices[0].HoldState == true && dices[1].HoldState == true && dices[2].HoldState == true
+                                           && dices[3].HoldState == true && dices[4].HoldState == true)
+            {
+                rollDiceBtn.IsEnabled = false;
+            }
+            else
+                rollDiceBtn.IsEnabled = true;
+
         }
     }
 }
