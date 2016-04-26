@@ -408,7 +408,7 @@ namespace Yahtzee
             if (dices[0].HoldState == false)
             {
                 dices[0].HoldState = true;
-                dices[0].holdValue(dices[0].DiceNumber);
+                //dices[0].holdValue(dices[0].DiceNumber);
                 markDice1.Opacity = 1;
                 holdDice1.Content = "Unhold";
             }
@@ -425,7 +425,7 @@ namespace Yahtzee
             if (dices[1].HoldState == false)
             {
                 dices[1].HoldState = true;
-                dices[1].holdValue(dices[1].DiceNumber);
+                //dices[1].holdValue(dices[1].DiceNumber);
                 markDice2.Opacity = 1;
                 holdDice2.Content = "Unhold";
             }
@@ -442,7 +442,7 @@ namespace Yahtzee
             if (dices[2].HoldState == false)
             {
                 dices[2].HoldState = true;
-                dices[2].holdValue(dices[2].DiceNumber);
+                //dices[2].holdValue(dices[2].DiceNumber);
                 markDice3.Opacity = 1;
                 holdDice3.Content = "Unhold";
             }
@@ -459,7 +459,7 @@ namespace Yahtzee
             if (dices[3].HoldState == false)
             {
                 dices[3].HoldState = true;
-                dices[3].holdValue(dices[3].DiceNumber);
+                //dices[3].holdValue(dices[3].DiceNumber);
                 markDice4.Opacity = 1;
                 holdDice4.Content = "Unhold";
             }
@@ -476,7 +476,7 @@ namespace Yahtzee
             if (dices[4].HoldState == false)
             {
                 dices[4].HoldState = true;
-                dices[4].holdValue(dices[4].DiceNumber);
+                //dices[4].holdValue(dices[4].DiceNumber);
                 markDice5.Opacity = 1;
                 holdDice5.Content = "Unhold";
             }
@@ -639,7 +639,6 @@ namespace Yahtzee
         // Reset the scoreboard back to default value
         private void resetScoreboard()
         {
-
             onesButton.Content            = "";
             twosButton.Content            = "";
             threesButton.Content          = "";
