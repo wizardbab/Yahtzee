@@ -16,6 +16,14 @@ using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
+/*********************************************************************************************/
+/*                                                                                           */
+/* This program is a yahtzee game, YAYZEE!!! The user rolls the dice, and the game will take */
+/* the current value of the dice that is(are) being held by the user. Then the game will     */
+/* calculate each of the scoreboard's category and show the user*/
+/*                                                                                           */
+/*********************************************************************************************/
+
 namespace Yahtzee
 {
     /// <summary>
