@@ -490,6 +490,8 @@ namespace Yahtzee
         }
         #endregion
         #region ScoreBoard button
+
+        // Digits buttons score
         private void digitButton_Clicked(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Content = scoreboard.calculateDigits(int.Parse(((Button)sender).Tag.ToString()), dices);
@@ -503,6 +505,7 @@ namespace Yahtzee
             resetTurn();
         }
 
+        // Three of a kind button score
         private void threeOfAKindButton_Clicked(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Content = scoreboard.calculateThreeOfAKind(dices);
@@ -513,6 +516,7 @@ namespace Yahtzee
             resetTurn();
         }
 
+        // Four of a kind button score
         private void fourOfAKindButton_Clicked(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Content = scoreboard.calculateFourOfAKind(dices);
@@ -523,6 +527,7 @@ namespace Yahtzee
             resetTurn();
         }
 
+        // Full house button score
         private void fullHouseButton_Clicked(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Content = scoreboard.calculateFullHouse(dices);
@@ -533,6 +538,7 @@ namespace Yahtzee
             resetTurn();
         }
 
+        //Small straight button score
         private void smallStraightButton_Clicked(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Content = scoreboard.calculateSmallStraight(dices);
@@ -543,6 +549,7 @@ namespace Yahtzee
             resetTurn();
         }
 
+        // Large straight button score
         private void largeStraightButton_Clicked(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Content = scoreboard.calculateLargeStraight(dices);
@@ -553,6 +560,7 @@ namespace Yahtzee
             resetTurn();
         }
 
+        // Chance button score
         private void chanceButton_Clicked(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Content = scoreboard.calculateChance(dices);
@@ -563,6 +571,7 @@ namespace Yahtzee
             resetTurn();
         }
 
+        // Yahtzee button score
         private void yahtzeeButton_Clicked(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Content = scoreboard.calculateYahtzee(dices);
@@ -573,6 +582,7 @@ namespace Yahtzee
             resetTurn();
         }
 
+        // Checks if all six digit scores have been entered
         private void checkDigitScore()
         {
             if(scoreboard.DigitsCount == 6)
@@ -590,6 +600,7 @@ namespace Yahtzee
             }
         }
 
+        // Checks if all thirteen scores have been entered and restarts the game
         private void checkTotalScore()
         {
             if(scoreboard.TotalCount == 13)
