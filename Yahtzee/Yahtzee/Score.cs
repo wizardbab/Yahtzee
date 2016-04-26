@@ -67,5 +67,7 @@ namespace Yahtzee
 
             return sum;
         }
+
+        //public 
     }
 }
