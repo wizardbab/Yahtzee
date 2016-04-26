@@ -100,6 +100,8 @@ namespace Yahtzee
             return sum;
         }
 
+        // Calculates whether two of one number and three of another exist
+        // and return the number of points
         public int calculateFullHouse(Dice[] dice)
         {
             int sum = 0;
@@ -120,6 +122,7 @@ namespace Yahtzee
             return sum;
         }
 
+        // Check if there are four numbers in sequential order and return the number of points
         public int calculateSmallStraight(Dice[] dice)
         {
             int sum = 0;
@@ -157,6 +160,7 @@ namespace Yahtzee
             return sum;
         }
 
+        // Check if all five numbers are in sequential order and return the number of points
         public int calculateLargeStraight(Dice[] dice)
         {
             int Sum = 0;
@@ -177,6 +181,7 @@ namespace Yahtzee
             return Sum;
         }
 
+        // Return the sum of the five dice
         public int calculateChance(Dice[] dice)
         {
             int sum = 0;
@@ -187,6 +192,7 @@ namespace Yahtzee
             return sum;
         }
 
+        // Check if all five dice have the same number
         public int calculateYahtzee(Dice[] dice)
         {
             int sum = 0;
