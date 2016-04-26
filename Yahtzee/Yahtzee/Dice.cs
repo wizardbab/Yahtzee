@@ -31,13 +31,6 @@ namespace Yahtzee
             get { return diceNumber; }
             set { diceNumber = value; }
         }
-
-        // Methods
-        public void holdValue(int currentNumber)
-        {
-            if (HoldState == true)
-                DiceNumber = currentNumber;
-        }
     
     }
 }
