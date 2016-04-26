@@ -7,7 +7,9 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid x:Name="yahtzee" Background="White">
+    <Grid x:Name="yahtzee" Background="#FFFBEFEF">
+
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="720" Stroke="Black" VerticalAlignment="Top" Width="639"/>
 
         <Button x:Name="rollDiceBtn" Content="ROLL  DICE" HorizontalAlignment="Left" Height="54" Margin="60,596,0,0" VerticalAlignment="Top" Width="199" FontSize="24" FontWeight="Bold" Background="#FF4D4A4A" Foreground="Red" Click="rollDiceBtn_Click"/>
 
@@ -56,57 +58,57 @@
         <Image x:Name="dice5_6" HorizontalAlignment="Left" Height="72" Margin="44,387,0,0" VerticalAlignment="Top" Width="75" Source="dice6.png" Opacity="0"/>
         <Button x:Name="holdDice5" Content="Hold" HorizontalAlignment="Left" Margin="159,401,0,0" VerticalAlignment="Top" Height="44" Width="100" FontWeight="Bold" Click="holdDice5Btn" Foreground="Red" Background="#FF4D4A4A"/>
 
-        <Button x:Name="startGameBtn" Content="START" HorizontalAlignment="Left" Margin="512,309,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="startGame_Click" Height="120" Width="244" Foreground="Red" Background="#FF4D4A4A" FontSize="48"/>
+        <Button x:Name="startGameBtn" Content="START" HorizontalAlignment="Left" Margin="516,309,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="startGame_Click" Height="120" Width="244" Foreground="Red" Background="#FF4D4A4A" FontSize="48"/>
 
-        <TextBlock x:Name="playerTextBlock" HorizontalAlignment="Left" Margin="1000,67,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Width="64" TextAlignment="Center"/>
+        <TextBlock x:Name="playerTextBlock" HorizontalAlignment="Left" Margin="1000,67,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Width="64" TextAlignment="Center" FontWeight="Bold" FontSize="16" Foreground="Red"/>
 
-        <Button x:Name="onesButton" Content="" HorizontalAlignment="Left" Margin="1000,101,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="1" Click="digitButton_Clicked" IsEnabled="False"/>
-        <TextBlock x:Name="onesTextBlock" HorizontalAlignment="Left" Margin="960,105,0,0" TextWrapping="Wrap" Text="Ones" VerticalAlignment="Top"/>
+        <Button x:Name="onesButton" Content="" HorizontalAlignment="Left" Margin="1000,101,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="1" Click="digitButton_Clicked" IsEnabled="False" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="onesTextBlock" HorizontalAlignment="Left" Margin="954,105,0,0" TextWrapping="Wrap" Text="Ones" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="twosButton" Content="" HorizontalAlignment="Left" Margin="1000,133,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="2" Click="digitButton_Clicked" IsEnabled="False"/>
-        <TextBlock x:Name="twosTextBlock" HorizontalAlignment="Left" Margin="961,137,0,0" TextWrapping="Wrap" Text="Twos" VerticalAlignment="Top"/>
+        <Button x:Name="twosButton" Content="" HorizontalAlignment="Left" Margin="1000,133,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="2" Click="digitButton_Clicked" IsEnabled="False" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="twosTextBlock" HorizontalAlignment="Left" Margin="955,137,0,0" TextWrapping="Wrap" Text="Twos" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="threesButton" Content="" HorizontalAlignment="Left" Margin="1000,165,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="3" Click="digitButton_Clicked" IsEnabled="False"/>
-        <TextBlock x:Name="threesTextBlock" HorizontalAlignment="Left" Margin="950,169,0,0" TextWrapping="Wrap" Text="Threes" VerticalAlignment="Top"/>
+        <Button x:Name="threesButton" Content="" HorizontalAlignment="Left" Margin="1000,165,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="3" Click="digitButton_Clicked" IsEnabled="False" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="threesTextBlock" HorizontalAlignment="Left" Margin="944,169,0,0" TextWrapping="Wrap" Text="Threes" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="foursButton" Content="" HorizontalAlignment="Left" Margin="1000,197,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="4" Click="digitButton_Clicked" IsEnabled="False"/>
-        <TextBlock x:Name="foursTextBlock" HorizontalAlignment="Left" Margin="958,201,0,0" TextWrapping="Wrap" Text="Fours" VerticalAlignment="Top"/>
+        <Button x:Name="foursButton" Content="" HorizontalAlignment="Left" Margin="1000,197,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="4" Click="digitButton_Clicked" IsEnabled="False" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="foursTextBlock" HorizontalAlignment="Left" Margin="952,201,0,0" TextWrapping="Wrap" Text="Fours" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="fivesButton" Content="" HorizontalAlignment="Left" Margin="1000,229,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="5" Click="digitButton_Clicked" IsEnabled="False"/>
-        <TextBlock x:Name="fivesTextBlock" HorizontalAlignment="Left" Margin="962,233,0,0" TextWrapping="Wrap" Text="Fives" VerticalAlignment="Top"/>
+        <Button x:Name="fivesButton" Content="" HorizontalAlignment="Left" Margin="1000,229,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="5" Click="digitButton_Clicked" IsEnabled="False" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="fivesTextBlock" HorizontalAlignment="Left" Margin="956,233,0,0" TextWrapping="Wrap" Text="Fives" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="sixesButton" Content="" HorizontalAlignment="Left" Margin="1000,261,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="6" Click="digitButton_Clicked" IsEnabled="False"/>
-        <TextBlock x:Name="sixesTextBlock" HorizontalAlignment="Left" Margin="961,265,0,0" TextWrapping="Wrap" Text="Sixes" VerticalAlignment="Top"/>
+        <Button x:Name="sixesButton" Content="" HorizontalAlignment="Left" Margin="1000,261,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" Tag="6" Click="digitButton_Clicked" IsEnabled="False" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="sixesTextBlock" HorizontalAlignment="Left" Margin="955,265,0,0" TextWrapping="Wrap" Text="Sixes" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <TextBox x:Name="numbersTotalTextBox" HorizontalAlignment="Left" Margin="1000,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False"/>
-        <TextBlock x:Name="numbersTotalTextBlock" HorizontalAlignment="Left" Margin="965,307,0,0" TextWrapping="Wrap" Text="Sum" VerticalAlignment="Top"/>
+        <TextBox x:Name="numbersTotalTextBox" HorizontalAlignment="Left" Margin="1000,301,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False" Background="Black" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="numbersTotalTextBlock" HorizontalAlignment="Left" Margin="959,307,0,0" TextWrapping="Wrap" Text="Sum" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <TextBox x:Name="numbersBonusTextBox" HorizontalAlignment="Left" Margin="1000,333,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False" TextChanged="numbersBonusTextBox_TextChanged"/>
-        <TextBlock x:Name="numbersBonusTextBlock" HorizontalAlignment="Left" Margin="953,339,0,0" TextWrapping="Wrap" Text="Bonus" VerticalAlignment="Top"/>
+        <TextBox x:Name="numbersBonusTextBox" HorizontalAlignment="Left" Margin="1000,333,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False" TextChanged="numbersBonusTextBox_TextChanged" Background="Black" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="numbersBonusTextBlock" HorizontalAlignment="Left" Margin="947,339,0,0" TextWrapping="Wrap" Text="Bonus" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="threeOfAKindButton" Content="" HorizontalAlignment="Left" Margin="1000,375,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="threeOfAKindButton_Clicked"/>
-        <TextBlock x:Name="threeOfAKindTextBlock" HorizontalAlignment="Left" Margin="894,381,0,0" TextWrapping="Wrap" Text="Three of a Kind" VerticalAlignment="Top"/>
+        <Button x:Name="threeOfAKindButton" Content="" HorizontalAlignment="Left" Margin="1000,375,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="threeOfAKindButton_Clicked" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="threeOfAKindTextBlock" HorizontalAlignment="Left" Margin="888,381,0,0" TextWrapping="Wrap" Text="Three of a Kind" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="fourOfAKindButton" Content="" HorizontalAlignment="Left" Margin="1000,407,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="fourOfAKindButton_Clicked"/>
-        <TextBlock x:Name="fourOfAKindTextBlock" HorizontalAlignment="Left" Margin="901,413,0,0" TextWrapping="Wrap" Text="Four of a Kind" VerticalAlignment="Top"/>
+        <Button x:Name="fourOfAKindButton" Content="" HorizontalAlignment="Left" Margin="1000,407,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="fourOfAKindButton_Clicked" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="fourOfAKindTextBlock" HorizontalAlignment="Left" Margin="895,413,0,0" TextWrapping="Wrap" Text="Four of a Kind" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="fullHouseButton" Content="" HorizontalAlignment="Left" Margin="1000,439,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="fullHouseButton_Clicked"/>
-        <TextBlock x:Name="fullHouseTextBlock" HorizontalAlignment="Left" Margin="925,445,0,0" TextWrapping="Wrap" Text="Full House" VerticalAlignment="Top"/>
+        <Button x:Name="fullHouseButton" Content="" HorizontalAlignment="Left" Margin="1000,439,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="fullHouseButton_Clicked" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="fullHouseTextBlock" HorizontalAlignment="Left" Margin="919,445,0,0" TextWrapping="Wrap" Text="Full House" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="smallStraightButton" Content="" HorizontalAlignment="Left" Margin="1000,471,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="smallStraightButton_Clicked"/>
-        <TextBlock x:Name="smallStraightTextBloxk" HorizontalAlignment="Left" Margin="903,477,0,0" TextWrapping="Wrap" Text="Small Straight" VerticalAlignment="Top"/>
+        <Button x:Name="smallStraightButton" Content="" HorizontalAlignment="Left" Margin="1000,471,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="smallStraightButton_Clicked" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="smallStraightTextBloxk" HorizontalAlignment="Left" Margin="897,477,0,0" TextWrapping="Wrap" Text="Small Straight" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="largeStraightButton" Content="" HorizontalAlignment="Left" Margin="1000,503,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="largeStraightButton_Clicked"/>
-        <TextBlock x:Name="largeStraightTextBlock" HorizontalAlignment="Left" Margin="902,509,0,0" TextWrapping="Wrap" Text="Large Straight" VerticalAlignment="Top"/>
+        <Button x:Name="largeStraightButton" Content="" HorizontalAlignment="Left" Margin="1000,503,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="largeStraightButton_Clicked" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="largeStraightTextBlock" HorizontalAlignment="Left" Margin="896,509,0,0" TextWrapping="Wrap" Text="Large Straight" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="chanceButton" Content="" HorizontalAlignment="Left" Margin="1000,535,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="chanceButton_Clicked"/>
-        <TextBlock x:Name="chanceTextBlock" HorizontalAlignment="Left" Margin="945,541,0,0" TextWrapping="Wrap" Text="Chance" VerticalAlignment="Top"/>
+        <Button x:Name="chanceButton" Content="" HorizontalAlignment="Left" Margin="1000,535,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="chanceButton_Clicked" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="chanceTextBlock" HorizontalAlignment="Left" Margin="939,541,0,0" TextWrapping="Wrap" Text="Chance" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <Button x:Name="yahtzeeButton" Content="" HorizontalAlignment="Left" Margin="1000,567,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="yahtzeeButton_Clicked"/>
-        <TextBlock x:Name="yahtzeeTextBlock" HorizontalAlignment="Left" Margin="931,573,0,0" TextWrapping="Wrap" Text="YAHTZEE!" VerticalAlignment="Top"/>
+        <Button x:Name="yahtzeeButton" Content="" HorizontalAlignment="Left" Margin="1000,567,0,0" VerticalAlignment="Top" Height="32" Width="64" BorderBrush="Gray" IsEnabled="False" Click="yahtzeeButton_Clicked" Background="#FF4D4A4A" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="yahtzeeTextBlock" HorizontalAlignment="Left" Margin="925,573,0,0" TextWrapping="Wrap" Text="YAHTZEE!" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
-        <TextBox x:Name="grandTotalTextBox" HorizontalAlignment="Left" Margin="1000,609,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False"/>
-        <TextBlock x:Name="grandTotalTextBlock" HorizontalAlignment="Left" Margin="922,615,0,0" TextWrapping="Wrap" Text="Total Score" VerticalAlignment="Top"/>
+        <TextBox x:Name="grandTotalTextBox" HorizontalAlignment="Left" Margin="1000,609,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsEnabled="False" Background="Black" FontWeight="Bold" Foreground="Red"/>
+        <TextBlock x:Name="grandTotalTextBlock" HorizontalAlignment="Left" Margin="916,615,0,0" TextWrapping="Wrap" Text="Total Score" VerticalAlignment="Top" FontWeight="Bold" Foreground="Red"/>
 
     </Grid>
 </Page>
