@@ -7,15 +7,15 @@
   IgnorableNamespaces="uap mp">
 
   <Identity
-    Name="a2a3e4fa-95c7-411d-af12-44d661d12d81"
-    Publisher="CN=En Yang"
+    Name="ecb4fdb1-59ad-4cde-a200-03011149e489"
+    Publisher="CN=David Tran"
     Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="a2a3e4fa-95c7-411d-af12-44d661d12d81" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="ecb4fdb1-59ad-4cde-a200-03011149e489" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>Yahtzee</DisplayName>
-    <PublisherDisplayName>En Yang</PublisherDisplayName>
+    <PublisherDisplayName>David Tran</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

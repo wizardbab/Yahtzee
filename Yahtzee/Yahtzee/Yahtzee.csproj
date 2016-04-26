@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{D5C4929A-B8F9-497F-A4EB-7D46506D605C}</ProjectGuid>
+    <ProjectGuid>{3F29F553-19CB-45AB-AB12-C39A147D58DF}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Yahtzee</RootNamespace>
@@ -98,10 +98,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dice.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Score.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +111,12 @@
     <None Include="Yahtzee_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="dice1.png" />
+    <Content Include="dice2.png" />
+    <Content Include="dice3.png" />
+    <Content Include="dice4.png" />
+    <Content Include="dice5.png" />
+    <Content Include="dice6.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
