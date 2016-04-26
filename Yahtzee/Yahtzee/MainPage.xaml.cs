@@ -383,14 +383,14 @@ namespace Yahtzee
             {
                 dices[0].HoldState = true;
                 dices[0].holdValue(dices[0].DiceNumber);
-                markDice1.Opacity = 1;
-                holdDice1.Content = "Unhold";
+                markDice1.Opacity  = 1;
+                holdDice1.Content  = "Unhold";
             }
             else
             {
                 dices[0].HoldState = false;
-                markDice1.Opacity = 0;
-                holdDice1.Content = "Hold";
+                markDice1.Opacity  = 0;
+                holdDice1.Content  = "Hold";
             }
         }
         private void holdDice2Btn(object sender, RoutedEventArgs e)
@@ -399,12 +399,14 @@ namespace Yahtzee
             {
                 dices[1].HoldState = true;
                 dices[1].holdValue(dices[1].DiceNumber);
-                markDice2.Opacity = 1;
+                markDice2.Opacity  = 1;
+                holdDice2.Content  = "Unhold";
             }
             else
             {
                 dices[1].HoldState = false;
-                markDice2.Opacity = 0;
+                markDice2.Opacity  = 0;
+                holdDice2.Content  = "Hold";
             }
         }
         private void holdDice3Btn(object sender, RoutedEventArgs e)
@@ -413,12 +415,14 @@ namespace Yahtzee
             {
                 dices[2].HoldState = true;
                 dices[2].holdValue(dices[2].DiceNumber);
-                markDice3.Opacity = 1;
+                markDice3.Opacity  = 1;
+                holdDice3.Content  = "Unhold";
             }
             else
             {
                 dices[2].HoldState = false;
-                markDice3.Opacity = 0;
+                markDice3.Opacity  = 0;
+                holdDice3.Content  = "Hold";
             }
         }
         private void holdDice4Btn(object sender, RoutedEventArgs e)
@@ -427,12 +431,14 @@ namespace Yahtzee
             {
                 dices[3].HoldState = true;
                 dices[3].holdValue(dices[3].DiceNumber);
-                markDice4.Opacity = 1;
+                markDice4.Opacity  = 1;
+                holdDice4.Content  = "Unhold";
             }
             else
             {
                 dices[3].HoldState = false;
-                markDice4.Opacity = 0;
+                markDice4.Opacity  = 0;
+                holdDice4.Content  = "Hold";
             }
         }
         private void holdDice5Btn(object sender, RoutedEventArgs e)
@@ -441,12 +447,14 @@ namespace Yahtzee
             {
                 dices[4].HoldState = true;
                 dices[4].holdValue(dices[4].DiceNumber);
-                markDice5.Opacity = 1;
+                markDice5.Opacity  = 1;
+                holdDice5.Content  = "Hold";
             }
             else
             {
                 dices[4].HoldState = false;
-                markDice5.Opacity = 0;
+                markDice5.Opacity  = 0;
+                holdDice5.Content  = "Unhold";
             }
         }
         private void holdDice6Btn(object sender, RoutedEventArgs e)
@@ -455,12 +463,14 @@ namespace Yahtzee
             {
                 dices[5].HoldState = true;
                 dices[5].holdValue(dices[5].DiceNumber);
-                markDice6.Opacity = 1;
+                markDice6.Opacity  = 1;
+                holdDice6.Content  = "Unhold";
             }
             else
             {
                 dices[5].HoldState = false;
-                markDice6.Opacity = 0;
+                markDice6.Opacity  = 0;
+                holdDice6.Content  = "Hold";
             }
         }
 
