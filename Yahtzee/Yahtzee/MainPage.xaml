@@ -9,55 +9,64 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <TextBlock x:Name="playerTextBlock" HorizontalAlignment="Left" Margin="1000,67,0,0" TextWrapping="Wrap" Text="Player" VerticalAlignment="Top" Width="64" TextAlignment="Center"/>
+        <Button x:Name="rollDiceBtn" Content="ROLL  DICE" HorizontalAlignment="Left" Height="54" Margin="60,596,0,0" VerticalAlignment="Top" Width="199" FontSize="24" FontWeight="Bold" Background="#FF4D4A4A" Foreground="Red" Click="rollDiceBtn_Click"/>
 
-        <TextBox x:Name="onesTextBox" HorizontalAlignment="Left" Margin="1000,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="onesTextBlock" HorizontalAlignment="Left" Margin="960,105,0,0" TextWrapping="Wrap" Text="Ones" VerticalAlignment="Top"/>
+        <Rectangle x:Name="markDice1" Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="82" Margin="40,13,0,0" Stroke="Red" VerticalAlignment="Top" Width="82" StrokeThickness="10" Opacity="0"/>
+        <Image x:Name="dice1_1" HorizontalAlignment="Left" Height="72" Margin="44,18,0,0" VerticalAlignment="Top" Width="75" Source="dice1.png"/>
+        <Image x:Name="dice1_2" HorizontalAlignment="Left" Height="72" Margin="44,18,0,0" VerticalAlignment="Top" Width="75" Source="dice2.png" Opacity="0"/>
+        <Image x:Name="dice1_3" HorizontalAlignment="Left" Height="72" Margin="44,18,0,0" VerticalAlignment="Top" Width="75" Source="dice3.png" Opacity="0"/>
+        <Image x:Name="dice1_4" HorizontalAlignment="Left" Height="72" Margin="44,18,0,0" VerticalAlignment="Top" Width="75" Source="dice4.png" Opacity="0"/>
+        <Image x:Name="dice1_5" HorizontalAlignment="Left" Height="72" Margin="44,18,0,0" VerticalAlignment="Top" Width="75" Source="dice5.png" Opacity="0"/>
+        <Image x:Name="dice1_6" HorizontalAlignment="Left" Height="72" Margin="44,18,0,0" VerticalAlignment="Top" Width="75" Source="dice6.png" Opacity="0"/>
+        <Button x:Name="holdDice1" Content="(Un)Hold" HorizontalAlignment="Left" Margin="159,32,0,0" VerticalAlignment="Top" Height="44" Width="100" FontWeight="Bold" Click="holdDice1Btn" Foreground="Red" Background="#FF4D4A4A"/>
 
-        <TextBox x:Name="twosTextBox" HorizontalAlignment="Left" Margin="1000,131,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="twosTextBlock" HorizontalAlignment="Left" Margin="961,137,0,0" TextWrapping="Wrap" Text="Twos" VerticalAlignment="Top"/>
+        <Rectangle x:Name="markDice2" Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="82" Margin="40,101,0,0" Stroke="Red" VerticalAlignment="Top" Width="82" StrokeThickness="10" Opacity="0"/>
+        <Image x:Name="dice2_2" HorizontalAlignment="Left" Height="76" Margin="44,107,0,0" VerticalAlignment="Top" Width="75" Source="dice2.png"/>
+        <Image x:Name="dice2_1" HorizontalAlignment="Left" Height="71" Margin="44,107,0,0" VerticalAlignment="Top" Width="75" Source="dice1.png" Opacity="0"/>
+        <Image x:Name="dice2_3" HorizontalAlignment="Left" Height="71" Margin="44,107,0,0" VerticalAlignment="Top" Width="75" Source="dice3.png" Opacity="0"/>
+        <Image x:Name="dice2_4" HorizontalAlignment="Left" Height="71" Margin="44,107,0,0" VerticalAlignment="Top" Width="75" Source="dice4.png" Opacity="0"/>
+        <Image x:Name="dice2_5" HorizontalAlignment="Left" Height="71" Margin="44,107,0,0" VerticalAlignment="Top" Width="75" Source="dice5.png" Opacity="0"/>
+        <Image x:Name="dice2_6" HorizontalAlignment="Left" Height="71" Margin="44,107,0,0" VerticalAlignment="Top" Width="75" Source="dice6.png" Opacity="0"/>
+        <Button x:Name="holdDice2" Content="(Un)Hold" HorizontalAlignment="Left" Margin="159,121,0,0" VerticalAlignment="Top" Height="44" Width="100" FontWeight="Bold" Click="holdDice2Btn" Foreground="Red" Background="#FF4D4A4A"/>
 
-        <TextBox x:Name="threesTextBox" HorizontalAlignment="Left" Margin="1000,163,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="threesTextBlock" HorizontalAlignment="Left" Margin="950,169,0,0" TextWrapping="Wrap" Text="Threes" VerticalAlignment="Top"/>
+        <Rectangle x:Name="markDice3" Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="82" Margin="40,191,0,0" Stroke="Red" VerticalAlignment="Top" Width="82" StrokeThickness="10" Opacity="0"/>
+        <Image x:Name="dice3_3" HorizontalAlignment="Left" Height="76" Margin="44,195,0,0" VerticalAlignment="Top" Width="78" Source="dice3.png"/>
+        <Image x:Name="dice3_1" HorizontalAlignment="Left" Height="76" Margin="44,195,0,0" VerticalAlignment="Top" Width="75" Source="dice1.png" Opacity="0"/>
+        <Image x:Name="dice3_2" HorizontalAlignment="Left" Height="76" Margin="44,195,0,0" VerticalAlignment="Top" Width="75" Source="dice2.png" Opacity="0"/>
+        <Image x:Name="dice3_4" HorizontalAlignment="Left" Height="76" Margin="44,195,0,0" VerticalAlignment="Top" Width="75" Source="dice4.png" Opacity="0"/>
+        <Image x:Name="dice3_5" HorizontalAlignment="Left" Height="76" Margin="44,195,0,0" VerticalAlignment="Top" Width="75" Source="dice5.png" Opacity="0"/>
+        <Image x:Name="dice3_6" HorizontalAlignment="Left" Height="76" Margin="44,195,0,0" VerticalAlignment="Top" Width="75" Source="dice6.png" Opacity="0"/>
+        <Button x:Name="holdDice3" Content="(Un)Hold" HorizontalAlignment="Left" Margin="159,209,0,0" VerticalAlignment="Top" Height="44" Width="100" FontWeight="Bold" Click="holdDice3Btn" Foreground="Red" Background="#FF4D4A4A"/>
 
-        <TextBox x:Name="foursTextBox" HorizontalAlignment="Left" Margin="1000,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="foursTextBlock" HorizontalAlignment="Left" Margin="958,201,0,0" TextWrapping="Wrap" Text="Fours" VerticalAlignment="Top"/>
+        <Rectangle x:Name="markDice4" Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="82" Margin="40,283,0,0" Stroke="Red" VerticalAlignment="Top" Width="82" StrokeThickness="10" Opacity="0"/>
+        <Image x:Name="dice4_4" HorizontalAlignment="Left" Height="76" Margin="44,288,0,0" VerticalAlignment="Top" Width="78" Source="dice4.png"/>
+        <Image x:Name="dice4_1" HorizontalAlignment="Left" Height="76" Margin="44,288,0,0" VerticalAlignment="Top" Width="75" Source="dice1.png" Opacity="0"/>
+        <Image x:Name="dice4_2" HorizontalAlignment="Left" Height="76" Margin="44,288,0,0" VerticalAlignment="Top" Width="75" Source="dice2.png" Opacity="0"/>
+        <Image x:Name="dice4_3" HorizontalAlignment="Left" Height="76" Margin="44,288,0,0" VerticalAlignment="Top" Width="75" Source="dice4.png" Opacity="0"/>
+        <Image x:Name="dice4_5" HorizontalAlignment="Left" Height="76" Margin="44,288,0,0" VerticalAlignment="Top" Width="75" Source="dice5.png" Opacity="0"/>
+        <Image x:Name="dice4_6" HorizontalAlignment="Left" Height="76" Margin="44,288,0,0" VerticalAlignment="Top" Width="75" Source="dice6.png" Opacity="0"/>
+        <Button x:Name="holdDice4" Content="(Un)Hold" HorizontalAlignment="Left" Height="44" Margin="159,303,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold" Click="holdDice4Btn" Foreground="Red" Background="#FF4D4A4A"/>
 
-        <TextBox x:Name="fivesTextBox" HorizontalAlignment="Left" Margin="1000,227,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="fivesTextBlock" HorizontalAlignment="Left" Margin="962,233,0,0" TextWrapping="Wrap" Text="Fives" VerticalAlignment="Top"/>
+        <Rectangle x:Name="markDice5" Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="82" Margin="40,381,0,0" Stroke="Red" VerticalAlignment="Top" Width="82" StrokeThickness="10" Opacity="0"/>
+        <Image x:Name="dice5_5" HorizontalAlignment="Left" Height="72" Margin="44,387,0,0" VerticalAlignment="Top" Width="75" Source="dice5.png"/>
+        <Image x:Name="dice5_1" HorizontalAlignment="Left" Height="72" Margin="44,387,0,0" VerticalAlignment="Top" Width="75" Source="dice1.png" Opacity="0"/>
+        <Image x:Name="dice5_2" HorizontalAlignment="Left" Height="72" Margin="44,387,0,0" VerticalAlignment="Top" Width="75" Source="dice2.png" Opacity="0"/>
+        <Image x:Name="dice5_3" HorizontalAlignment="Left" Height="72" Margin="44,387,0,0" VerticalAlignment="Top" Width="75" Source="dice3.png" Opacity="0"/>
+        <Image x:Name="dice5_4" HorizontalAlignment="Left" Height="72" Margin="44,387,0,0" VerticalAlignment="Top" Width="75" Source="dice4.png" Opacity="0"/>
+        <Image x:Name="dice5_6" HorizontalAlignment="Left" Height="72" Margin="44,387,0,0" VerticalAlignment="Top" Width="75" Source="dice6.png" Opacity="0"/>
+        <Button x:Name="holdDice5" Content="(Un)Hold" HorizontalAlignment="Left" Margin="159,401,0,0" VerticalAlignment="Top" Height="44" Width="100" FontWeight="Bold" Click="holdDice5Btn" Foreground="Red" Background="#FF4D4A4A"/>
 
-        <TextBox x:Name="sixesTextBox" HorizontalAlignment="Left" Margin="1000,259,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="sixesTextBlock" HorizontalAlignment="Left" Margin="961,265,0,0" TextWrapping="Wrap" Text="Sixes" VerticalAlignment="Top"/>
+        <Rectangle x:Name="markDice6" Fill="#FFF5F4F4" HorizontalAlignment="Left" Height="82" Margin="40,475,0,0" Stroke="Red" VerticalAlignment="Top" Width="82" StrokeThickness="10" Opacity="0"/>
+        <Image x:Name="dice6_6" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="87" Source="dice6.png"/>
+        <Image x:Name="dice6_1" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice1.png" Opacity="0"/>
+        <Image x:Name="dice6_2" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice2.png" Opacity="0"/>
+        <Image x:Name="dice6_3" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice3.png" Opacity="0"/>
+        <Image x:Name="dice6_4" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice4.png" Opacity="0"/>
+        <Image x:Name="dice6_5" HorizontalAlignment="Left" Height="72" Margin="44,480,0,0" VerticalAlignment="Top" Width="75" Source="dice5.png" Opacity="0"/>
+        <Button x:Name="holdDice6" Content="(Un)Hold" HorizontalAlignment="Left" Margin="159,494,0,0" VerticalAlignment="Top" Height="44" Width="100" Click="holdDice6Btn" FontWeight="Bold" Foreground="Red" Background="#FF4D4A4A"/>
 
-        <TextBox x:Name="numbersTotalTextBox" HorizontalAlignment="Left" Margin="1000,291,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="numbersTotalTextBlock" HorizontalAlignment="Left" Margin="965,297,0,0" TextWrapping="Wrap" Text="Sum" VerticalAlignment="Top"/>
 
-        <TextBox x:Name="numbersBonusTextBox" HorizontalAlignment="Left" Margin="1000,323,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="numbersBonusTextBlock" HorizontalAlignment="Left" Margin="953,329,0,0" TextWrapping="Wrap" Text="Bonus" VerticalAlignment="Top"/>
-
-        <TextBox x:Name="threeOfAKindTextBox" HorizontalAlignment="Left" Margin="1000,355,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="threeOfAKindTextBlock" HorizontalAlignment="Left" Margin="894,361,0,0" TextWrapping="Wrap" Text="Three of a Kind" VerticalAlignment="Top"/>
-
-        <TextBox x:Name="fourOfAKindTextBox" HorizontalAlignment="Left" Margin="1000,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="fourOfAKindTextBlock" HorizontalAlignment="Left" Margin="901,393,0,0" TextWrapping="Wrap" Text="Four of a Kind" VerticalAlignment="Top"/>
-
-        <TextBox x:Name="fullHouseTextBox" HorizontalAlignment="Left" Margin="1000,419,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="fullHouseTextBlock" HorizontalAlignment="Left" Margin="925,425,0,0" TextWrapping="Wrap" Text="Full House" VerticalAlignment="Top"/>
-
-        <TextBox x:Name="smallStraightTextBox" HorizontalAlignment="Left" Margin="1000,451,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="smallStraightTextBloxk" HorizontalAlignment="Left" Margin="903,457,0,0" TextWrapping="Wrap" Text="Small Straight" VerticalAlignment="Top"/>
-
-        <TextBox x:Name="largeStraightTextBox" HorizontalAlignment="Left" Margin="1000,483,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="largeStraightTextBlock" HorizontalAlignment="Left" Margin="902,489,0,0" TextWrapping="Wrap" Text="Large Straight" VerticalAlignment="Top"/>
-
-        <TextBox x:Name="chanceTextBox" HorizontalAlignment="Left" Margin="1000,515,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="chanceTextBlock" HorizontalAlignment="Left" Margin="945,521,0,0" TextWrapping="Wrap" Text="Chance" VerticalAlignment="Top"/>
-
-        <TextBox x:Name="yahtzeeTextBox" HorizontalAlignment="Left" Margin="1000,547,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="yahtzeeTextBlock" HorizontalAlignment="Left" Margin="931,553,0,0" TextWrapping="Wrap" Text="YAHTZEE!" VerticalAlignment="Top"/>
-
-        <TextBox x:Name="grandTotalTextBox" HorizontalAlignment="Left" Margin="1000,579,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" IsReadOnly="True" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False"/>
-        <TextBlock x:Name="grandTotalTextBlock" HorizontalAlignment="Left" Margin="922,585,0,0" TextWrapping="Wrap" Text="Total Score" VerticalAlignment="Top"/>
-
+        <Button x:Name="startGameBtn" Content="START" HorizontalAlignment="Left" Margin="512,309,0,0" VerticalAlignment="Top" FontWeight="Bold" Click="startGame_Click" Height="120" Width="244" Foreground="Red" Background="#FF4D4A4A" FontSize="48"/>
+    
     </Grid>
 </Page>
